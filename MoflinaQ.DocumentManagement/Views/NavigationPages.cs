@@ -25,13 +25,6 @@ namespace MoflinaQ.DocumentManagement.Views
         }
     }
 
-    public sealed class ApprovalRequestPage : NavigationPage
-    {
-        public ApprovalRequestPage() : base("稟議書")
-        {
-        }
-    }
-
     public sealed class SettingsPage : NavigationPage
     {
         public SettingsPage() : base("設定")
