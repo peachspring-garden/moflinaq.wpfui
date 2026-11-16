@@ -36,19 +36,22 @@
           <TextBlock Text="MoflinaQ" FontWeight="SemiBold" VerticalAlignment="Center" />
           <Border Width="1" Height="13" Margin="12,0" Background="#60706B6B" />
           <TextBlock Text="{Binding CurrentPageTitle}" VerticalAlignment="Center" />
+          <Border Width="1" Height="13" Margin="12,0" Background="#60706B6B" />
+          <StackPanel Orientation="Horizontal" VerticalAlignment="Center"
+                      shell:WindowChrome.IsHitTestVisibleInChrome="True">
+            <ui:Button Style="{StaticResource YearButtonStyle}" Icon="{ui:SymbolIcon ArrowLeft24}"
+                       AutomationProperties.Name="前年度" ToolTip="前年度" Command="{Binding PreviousYearCommand}" />
+            <Label Height="32" Margin="2,0" VerticalAlignment="Center" VerticalContentAlignment="Center"
+                   AutomationProperties.Name="年度"
+                   Content="{Binding FiscalYear}" ContentStringFormat="{}{0}年度" />
+            <ui:Button Style="{StaticResource YearButtonStyle}" Icon="{ui:SymbolIcon ArrowRight24}"
+                       AutomationProperties.Name="次年度" ToolTip="次年度" Command="{Binding NextYearCommand}" />
+          </StackPanel>
         </StackPanel>
       </ui:TitleBar.Header>
       <ui:TitleBar.TrailingContent>
         <StackPanel Orientation="Horizontal" Margin="0,0,12,0" VerticalAlignment="Center"
                     shell:WindowChrome.IsHitTestVisibleInChrome="True">
-          <ui:Button Style="{StaticResource YearButtonStyle}" Icon="{ui:SymbolIcon ArrowLeft24}"
-                     AutomationProperties.Name="前年度" ToolTip="前年度" Command="{Binding PreviousYearCommand}" />
-          <ui:TextBox Width="90" MinHeight="30" Margin="2,0,4,0" MaxLength="4"
-                      AutomationProperties.Name="年度"
-                      Text="{Binding FiscalYear, UpdateSourceTrigger=LostFocus, ValidatesOnExceptions=True}" />
-          <TextBlock Text="年度" VerticalAlignment="Center" Margin="0,0,3,0" />
-          <ui:Button Style="{StaticResource YearButtonStyle}" Icon="{ui:SymbolIcon ArrowRight24}"
-                     AutomationProperties.Name="次年度" ToolTip="次年度" Command="{Binding NextYearCommand}" />
           <ui:Button Style="{StaticResource YearButtonStyle}" Icon="{ui:SymbolIcon ArrowClockwise24}"
                      AutomationProperties.Name="更新" ToolTip="更新" Command="{Binding RefreshCommand}" />
           <Border Width="29" Height="29" CornerRadius="15" Background="#1473CF" Margin="16,0,8,0"
