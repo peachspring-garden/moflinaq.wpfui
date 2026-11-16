@@ -1,0 +1,14 @@
+.vs/
+bin/
+obj/
+
+*.user
+*.suo
+*.cache
+
+packages/
+
+TestResults/
+
+_ReSharper*/
+*.DotSettings.user

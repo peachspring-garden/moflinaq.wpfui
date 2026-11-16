@@ -1,0 +1,80 @@
+<ui:FluentWindow x:Class="MoflinaQ.DocumentManagement.Views.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+                 xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
+                 Title="書類管理"
+                 Width="1160" Height="740" MinWidth="720" MinHeight="420"
+                 Icon="/Assets/blowfish.ico"
+                 ExtendsContentIntoTitleBar="True"
+                 WindowBackdropType="Mica">
+  <ui:FluentWindow.Resources>
+    <Style x:Key="YearButtonStyle" TargetType="{x:Type ui:Button}" BasedOn="{StaticResource {x:Type ui:Button}}">
+      <Setter Property="Width" Value="34" />
+      <Setter Property="Height" Value="30" />
+      <Setter Property="Padding" Value="4" />
+      <Setter Property="Margin" Value="2,0" />
+    </Style>
+  </ui:FluentWindow.Resources>
+
+  <DockPanel>
+    <DockPanel.Background>
+      <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#E8F7EEEB" Offset="0" />
+        <GradientStop Color="#E8F6F0F1" Offset="0.38" />
+        <GradientStop Color="#E8EAF3F7" Offset="0.7" />
+        <GradientStop Color="#E8EAF3F7" Offset="1" />
+      </LinearGradientBrush>
+    </DockPanel.Background>
+
+    <ui:TitleBar DockPanel.Dock="Top" Height="48">
+      <ui:TitleBar.Icon>
+        <ui:ImageIcon Source="/Assets/blowfish.ico" />
+      </ui:TitleBar.Icon>
+      <ui:TitleBar.Header>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="8,0,0,0">
+          <TextBlock Text="MoflinaQ" FontWeight="SemiBold" VerticalAlignment="Center" />
+          <Border Width="1" Height="13" Margin="12,0" Background="#60706B6B" />
+          <TextBlock Text="{Binding CurrentPageTitle}" VerticalAlignment="Center" />
+        </StackPanel>
+      </ui:TitleBar.Header>
+      <ui:TitleBar.TrailingContent>
+        <StackPanel Orientation="Horizontal" Margin="0,0,12,0" VerticalAlignment="Center"
+                    shell:WindowChrome.IsHitTestVisibleInChrome="True">
+          <ui:Button Style="{StaticResource YearButtonStyle}" Icon="{ui:SymbolIcon ArrowLeft24}"
+                     AutomationProperties.Name="前年度" ToolTip="前年度" Command="{Binding PreviousYearCommand}" />
+          <ui:TextBox Width="90" MinHeight="30" Margin="2,0,4,0" MaxLength="4"
+                      AutomationProperties.Name="年度"
+                      Text="{Binding FiscalYear, UpdateSourceTrigger=LostFocus, ValidatesOnExceptions=True}" />
+          <TextBlock Text="年度" VerticalAlignment="Center" Margin="0,0,3,0" />
+          <ui:Button Style="{StaticResource YearButtonStyle}" Icon="{ui:SymbolIcon ArrowRight24}"
+                     AutomationProperties.Name="次年度" ToolTip="次年度" Command="{Binding NextYearCommand}" />
+          <ui:Button Style="{StaticResource YearButtonStyle}" Icon="{ui:SymbolIcon ArrowClockwise24}"
+                     AutomationProperties.Name="更新" ToolTip="更新" Command="{Binding RefreshCommand}" />
+          <Border Width="29" Height="29" CornerRadius="15" Background="#1473CF" Margin="16,0,8,0"
+                  VerticalAlignment="Center">
+            <TextBlock Text="{Binding UserInitial}" Foreground="White" FontWeight="SemiBold"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" />
+          </Border>
+          <StackPanel Width="114" VerticalAlignment="Center">
+            <TextBlock Text="{Binding UserName}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+            <TextBlock Text="{Binding Department}" FontSize="11" Opacity="0.75" TextTrimming="CharacterEllipsis" />
+          </StackPanel>
+        </StackPanel>
+      </ui:TitleBar.TrailingContent>
+    </ui:TitleBar>
+
+    <ui:NavigationView x:Name="Navigation"
+                       PaneDisplayMode="Left"
+                       OpenPaneLength="256"
+                       IsPaneOpen="True"
+                       IsPaneToggleVisible="True"
+                       IsBackButtonVisible="Visible"
+                       HeaderVisibility="Collapsed"
+                       FrameMargin="0"
+                       MenuItemsSource="{Binding MenuItems}"
+                       Loaded="Navigation_Loaded"
+                       SelectionChanged="Navigation_SelectionChanged"
+                       AutomationProperties.Name="書類管理メニュー" />
+  </DockPanel>
+</ui:FluentWindow>
