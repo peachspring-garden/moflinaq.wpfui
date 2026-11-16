@@ -480,7 +480,7 @@ namespace MoflinaQ.DocumentManagement.Views
             }
 
             var nextNumber = ApprovalStore.Documents
-                .Select(doc => int.Parse(doc.Number.Substring(doc.Number.Length - 3)))
+                .Select(d => int.Parse(d.Number.Substring(d.Number.Length - 3)))
                 .DefaultIfEmpty(100)
                 .Max() + 1;
             var doc = new ApprovalDocument
