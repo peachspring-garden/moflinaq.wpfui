@@ -18,13 +18,6 @@ namespace MoflinaQ.DocumentManagement.Views
         }
     }
 
-    public sealed class HomePage : NavigationPage
-    {
-        public HomePage() : base("ホーム")
-        {
-        }
-    }
-
     public sealed class RepairRequestPage : NavigationPage
     {
         public RepairRequestPage() : base("修理依頼書")
