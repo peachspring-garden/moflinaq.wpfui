@@ -82,6 +82,7 @@
                        HeaderVisibility="Collapsed"
                        FrameMargin="0"
                        MenuItemsSource="{Binding MenuItems}"
+                       FooterMenuItemsSource="{Binding FooterMenuItems}"
                        Loaded="Navigation_Loaded"
                        SelectionChanged="Navigation_SelectionChanged"
                        AutomationProperties.Name="書類管理メニュー" />

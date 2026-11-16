@@ -38,4 +38,11 @@ namespace MoflinaQ.DocumentManagement.Views
         {
         }
     }
+
+    public sealed class SettingsPage : NavigationPage
+    {
+        public SettingsPage() : base("設定")
+        {
+        }
+    }
 }

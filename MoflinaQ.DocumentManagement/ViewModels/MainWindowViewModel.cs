@@ -33,12 +33,14 @@ namespace MoflinaQ.DocumentManagement.ViewModels
 
             var allowed = new HashSet<MenuPermission>(permissions);
             MenuItems = BuildMenu(allowed).ToList().AsReadOnly();
+            FooterMenuItems = new[] { CreateItem("設定", SymbolRegular.Settings24, typeof(SettingsPage)) };
         }
 
         public string UserName { get; }
         public string Department { get; }
         public string UserInitial { get; }
         public IReadOnlyList<NavigationViewItem> MenuItems { get; }
+        public IReadOnlyList<NavigationViewItem> FooterMenuItems { get; }
         public IRelayCommand PreviousYearCommand { get; }
         public IRelayCommand NextYearCommand { get; }
         public IRelayCommand RefreshCommand { get; }
