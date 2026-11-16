@@ -44,6 +44,10 @@ namespace MoflinaQ.DocumentManagement.Views
             }
         }
 
+        public string Initial => string.IsNullOrEmpty(Name) ? string.Empty : Name.Substring(0, 1);
+
+        public string ToolTipText => Role + "：" + Name + "（" + StateText + "）";
+
         public Brush ChipBackground
         {
             get

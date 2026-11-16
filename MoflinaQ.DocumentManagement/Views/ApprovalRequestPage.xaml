@@ -49,12 +49,14 @@
 
     <DataTemplate x:Key="StepChipTemplate">
       <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-        <Border Background="{Binding ChipBackground}" BorderBrush="{Binding ChipBorder}" BorderThickness="1"
-                CornerRadius="4" Padding="5,2">
-          <TextBlock Text="{Binding Role}" FontSize="10" Foreground="{Binding ChipForeground}" />
+        <Border Width="26" Height="26" CornerRadius="13"
+                Background="{Binding ChipBackground}" BorderBrush="{Binding ChipBorder}" BorderThickness="1"
+                ToolTip="{Binding ToolTipText}">
+          <TextBlock Text="{Binding Initial}" FontSize="11" Foreground="{Binding ChipForeground}"
+                     HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Border>
-        <TextBlock Text="→" FontSize="10" Margin="3,0" VerticalAlignment="Center"
-                   Foreground="{DynamicResource TextFillColorSecondaryBrush}" Visibility="{Binding ArrowVisibility}" />
+        <ui:SymbolIcon Symbol="ArrowRight16" FontSize="12" Margin="3,0" VerticalAlignment="Center"
+                       Foreground="{DynamicResource TextFillColorSecondaryBrush}" Visibility="{Binding ArrowVisibility}" />
       </StackPanel>
     </DataTemplate>
 
@@ -86,7 +88,7 @@
             <ColumnDefinition Width="150" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="120" />
-            <ColumnDefinition Width="470" />
+            <ColumnDefinition Width="360" />
             <ColumnDefinition Width="60" />
             <ColumnDefinition Width="100" />
           </Grid.ColumnDefinitions>
@@ -159,7 +161,7 @@
                   <ColumnDefinition Width="150" />
                   <ColumnDefinition Width="*" />
                   <ColumnDefinition Width="120" />
-                  <ColumnDefinition Width="470" />
+                  <ColumnDefinition Width="360" />
                   <ColumnDefinition Width="60" />
                   <ColumnDefinition Width="100" />
                 </Grid.ColumnDefinitions>
