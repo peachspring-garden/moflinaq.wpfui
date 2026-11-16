@@ -137,6 +137,28 @@
   <ItemGroup>
     <Resource Include="Assets\blowfish.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MoflinaQ.Core\MoflinaQ.Core.csproj">
+      <Project>{af7faea0-e1bb-4256-960c-371ccdfa3c24}</Project>
+      <Name>MoflinaQ.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MoflinaQ.DocumentManagement.Core\MoflinaQ.DocumentManagement.Core.csproj">
+      <Project>{962373e4-e7c9-4680-8e4f-374635eeb4ca}</Project>
+      <Name>MoflinaQ.DocumentManagement.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MoflinaQ.DocumentManagement.Infrastructure\MoflinaQ.DocumentManagement.Infrastructure.csproj">
+      <Project>{20a7fe3b-ddc9-4a21-92dd-60803d24a0f3}</Project>
+      <Name>MoflinaQ.DocumentManagement.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MoflinaQ.Infrastructure\MoflinaQ.Infrastructure.csproj">
+      <Project>{4c7c0f3c-c2ff-440b-baa2-300ce79aa3e6}</Project>
+      <Name>MoflinaQ.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MoflinaQ.UI\MoflinaQ.UI.csproj">
+      <Project>{e04988bc-b278-4845-9c59-e418c6d7a734}</Project>
+      <Name>MoflinaQ.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\CommunityToolkit.Mvvm.8.4.2\build\CommunityToolkit.Mvvm.targets" Condition="Exists('..\packages\CommunityToolkit.Mvvm.8.4.2\build\CommunityToolkit.Mvvm.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

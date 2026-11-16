@@ -9,6 +9,13 @@
         <ui:ThemesDictionary Theme="Light" />
         <ui:ControlsDictionary />
       </ResourceDictionary.MergedDictionaries>
+
+      <FontFamily x:Key="ContentControlThemeFontFamily">pack://application:,,,/MoflinaQ.UI;component/Assets/Fonts/#Rounded Mgen+ 2p</FontFamily>
+
+      <Style TargetType="{x:Type Window}">
+        <Setter Property="FontFamily" Value="{DynamicResource ContentControlThemeFontFamily}" />
+        <Setter Property="FontWeight" Value="Normal" />
+      </Style>
     </ResourceDictionary>
   </Application.Resources>
 </Application>

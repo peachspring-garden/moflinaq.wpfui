@@ -4,6 +4,8 @@
                  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
                  xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
                  Title="書類管理"
+                 FontFamily="{DynamicResource ContentControlThemeFontFamily}"
+                 FontWeight="Normal"
                  Width="1160" Height="740" MinWidth="720" MinHeight="420"
                  Icon="/Assets/blowfish.ico"
                  ExtendsContentIntoTitleBar="True"
