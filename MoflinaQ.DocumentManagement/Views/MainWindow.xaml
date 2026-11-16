@@ -33,7 +33,7 @@
       </ui:TitleBar.Icon>
       <ui:TitleBar.Header>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="8,0,0,0">
-          <TextBlock Text="MoflinaQ" FontWeight="SemiBold" VerticalAlignment="Center" />
+          <TextBlock Text="書類管理" FontWeight="SemiBold" VerticalAlignment="Center" />
           <Border Width="1" Height="13" Margin="12,0" Background="#60706B6B" />
           <TextBlock Text="{Binding CurrentPageTitle}" VerticalAlignment="Center" />
           <Border Width="1" Height="13" Margin="12,0" Background="#60706B6B" />
@@ -50,14 +50,14 @@
                        AutomationProperties.Name="前年度" ToolTip="前年度" Command="{Binding PreviousYearCommand}" />
             <ui:Button Style="{StaticResource YearButtonStyle}" Icon="{ui:SymbolIcon ArrowRight24}"
                        AutomationProperties.Name="次年度" ToolTip="次年度" Command="{Binding NextYearCommand}" />
+            <ui:Button Style="{StaticResource YearButtonStyle}" Icon="{ui:SymbolIcon ArrowClockwise24}"
+                       AutomationProperties.Name="更新" ToolTip="更新" Command="{Binding RefreshCommand}" />
           </StackPanel>
         </StackPanel>
       </ui:TitleBar.Header>
       <ui:TitleBar.TrailingContent>
         <StackPanel Orientation="Horizontal" Margin="0,0,12,0" VerticalAlignment="Center"
                     shell:WindowChrome.IsHitTestVisibleInChrome="True">
-          <ui:Button Style="{StaticResource YearButtonStyle}" Icon="{ui:SymbolIcon ArrowClockwise24}"
-                     AutomationProperties.Name="更新" ToolTip="更新" Command="{Binding RefreshCommand}" />
           <Border Width="29" Height="29" CornerRadius="15" Background="#1473CF" Margin="16,0,8,0"
                   VerticalAlignment="Center">
             <TextBlock Text="{Binding UserInitial}" Foreground="White" FontWeight="SemiBold"
